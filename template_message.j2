@@ -1,0 +1,10 @@
+*{{ data.title }}*
+
+*Technical:*{% for information in data.technical.data %}
+• [{{information.title}}]({{information.link}}){% endfor %}
+
+*Editorial:*{% for information in data.editorial.data %}
+• [{{information.title}}]({{information.link}}){% endfor %}
+
+*Headlines:*{% for information in data.headlines.data %}
+• [{{information.title}}]({{information.link}}){% endfor %}
