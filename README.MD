@@ -8,11 +8,20 @@ This project is build for sending [kubeweekly.io](https://kubeweekly.io/) (The w
   
 #### How to use
 ---
+
 __Install Dependencies__
+
 ```
 pip3 install -r requirement.txt
 ```
 __Run The APP__
+
 ```
 python3 main.py
+```
+
+__Run Docker Locally__
+
+```
+docker run -e CHATID=123456789 -e TOKEN=nomunomuchua <DOCKERIMAGE>
 ```
