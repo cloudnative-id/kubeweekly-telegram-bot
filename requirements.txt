@@ -1,3 +1,4 @@
 python-telegram-bot
 jinja2
-flask
+PyGithub
+pyyaml
