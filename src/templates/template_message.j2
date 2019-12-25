@@ -1,10 +1,11 @@
 *{{ data.title }}*
+*{{ data.date }}*
 
-*Technical:*{% for information in data.technical.data %}
-• [{{information.title}}]({{information.link}}){% endfor %}
+*Technical:*{% for information in data.data %}{% if information.type == 'technical' %}
+• [{{information.title}}]({{information.link}}){% endif %}{% endfor %}
 
-*Editorial:*{% for information in data.editorial.data %}
-• [{{information.title}}]({{information.link}}){% endfor %}
+*Editorial:*{% for information in data.data %}{% if information.type == 'editorial' %}
+• [{{information.title}}]({{information.link}}){% endif %}{% endfor %}
 
-*Headlines:*{% for information in data.headlines.data %}
-• [{{information.title}}]({{information.link}}){% endfor %}
+*Headlines:*{% for information in data.data %}{% if information.type == 'headlines' %}
+• [{{information.title}}]({{information.link}}){% endif %}{% endfor %}
