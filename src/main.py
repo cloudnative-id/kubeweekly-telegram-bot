@@ -40,10 +40,14 @@ content_list = yaml.load(contents_raw.decoded_content)
 
 # temporary variable
 x = 0
+updateRepo = False
 
 # check every content with stattus not delivered
 for data in content_list['contentList']:
     if data['status'] == 'not delivered':
+
+        # change update repo variable to True
+        updateRepo = True
 
         # get file spesific kubeweekly
         kubeweekly_raw = repo.get_contents(data['content'])
@@ -57,8 +61,11 @@ for data in content_list['contentList']:
 
     x += 1
 
-# update contentList.yaml
-repo.update_file(contents_raw.path, "Updated by Bot", yaml.dump(content_list), contents_raw.sha)
+# if any change, update repo
+if updateRepo == True:
+
+    # update contentList.yaml
+    repo.update_file(contents_raw.path, "Updated by Bot", yaml.dump(content_list), contents_raw.sha)
 
         
 
