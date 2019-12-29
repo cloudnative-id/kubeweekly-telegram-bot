@@ -1,6 +1,6 @@
 DOCKER_REGISTRY := 
 DOCKER_VERSION := $(shell git rev-parse --short HEAD)
-APPS := kubeweekly-telegram-bot
+APPS := kubeweekly_telegram_bot
 
 .PHONY: build
 build: 
